@@ -4,5 +4,7 @@
     <string name="app_name">GraphPlot</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+      <string name="EnterResults">Enter Results</string>
+        <string name="CompareWithSubjects">Compare With Number Of Subjects</string>
 
 </resources>

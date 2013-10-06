@@ -14,12 +14,54 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.graphplot.MainActivity"
+            android:name="com.example.graphplot.MainWindow"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+         <activity
+            android:name="com.example.graphplot.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+              
+            </intent-filter>
+        </activity>
+        
+          <activity
+            android:name="com.example.graphplot.GradeComparsionWindow"
+            android:label="@string/app_name" >
+            <intent-filter>
+                
+            </intent-filter>
+        </activity>
+        
+           <activity
+            android:name="com.example.graphplot.ResultEnterWindow"
+            android:label="@string/app_name" >
+            <intent-filter>
+                
+            </intent-filter>
+        </activity>
+        
+        
+           <activity
+            android:name="com.example.graphplot.ResultsWindow1"
+            android:label="@string/app_name" >
+            <intent-filter>
+                
+            </intent-filter>
+        </activity>
+       
+        
+           <activity
+            android:name="com.example.graphplot.ResultsWindow2"
+            android:label="@string/app_name" >
+            <intent-filter>
+                
             </intent-filter>
         </activity>
     </application>
