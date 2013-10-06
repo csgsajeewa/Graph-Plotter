@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+   
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:text="Finish" 
+        android:onClick="finish"/>
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/finishButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:text="Enter" 
+        android:onClick="enter"/>
+
+    <TextView
+        android:id="@+id/semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/moduleCode"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="65dp"
+        android:text="Semester:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+     <TextView
+        android:id="@+id/moduleCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="158dp"
+        android:text="Enter Module Code:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/gradeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/moduleCode"
+        android:layout_marginTop="75dp"
+        android:text="Enter Grade:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <EditText
+        android:id="@+id/semesterNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/semester"
+        android:layout_toRightOf="@+id/gradeText"
+        android:ems="10"
+        android:inputType="number" >
+        
+         <requestFocus />
+    </EditText>
+    
+    <EditText
+        android:id="@+id/moduleCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/moduleCodeText"
+        android:layout_alignBottom="@+id/moduleCodeText"
+        android:layout_marginLeft="24dp"
+        android:layout_toRightOf="@+id/moduleCodeText"
+        android:ems="10" 
+         android:inputType="text">
+
+        
+    </EditText>
+
+    <EditText
+        android:id="@+id/grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gradeText"
+       
+        android:layout_marginLeft="38dp"
+        android:layout_toRightOf="@+id/gradeText"
+        android:ems="10" 
+         android:inputType="text"/>
+
+    <TextView
+        android:id="@+id/creditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/gradeText"
+        android:layout_marginTop="59dp"
+        android:text="Credits:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/credit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/grade"
+        android:layout_alignTop="@+id/creditText"
+        android:ems="10"
+        android:inputType="number" />
+
+</RelativeLayout>
