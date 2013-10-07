@@ -48,7 +48,7 @@ public class ResultsWindow2 extends Activity{
 				// give news items to list view via adapter
 				tSemester.setText(Integer.toString(exam.getSemester()));
 				
-				SGPA.setText(String.format("%.2f", calculateSGPA()));
+				SGPA.setText(String.format("%.2f", exam.calculateSGPA()));
 				adapter.setList(exam.getResults());
 				ListView list=(ListView)findViewById(R.id.gradeList1);
 				list.setAdapter(adapter);
@@ -63,7 +63,7 @@ public class ResultsWindow2 extends Activity{
 		LinkedList<Result>results=exam.getResults();
 		Iterator<Result>iter=results.listIterator();
 		String grade;
-		int totalCredit=0;
+		double totalCredit=0;
 		double obtainedValue=0;
 		double gradeCredit=0;
 		Result result;
@@ -80,24 +80,24 @@ public class ResultsWindow2 extends Activity{
 				if(grade.charAt(0)=='A' && grade.charAt(1)=='-')
 					gradeCredit=3.7;
 				if(grade.charAt(0)=='B' && grade.charAt(1)=='+')
-					gradeCredit=3.5;
+					gradeCredit=3.3;
 				if(grade.charAt(0)=='B' && grade.charAt(1)=='-')
-					gradeCredit=2.9;
-				if(grade.charAt(0)=='C' && grade.charAt(1)=='+')
 					gradeCredit=2.7;
-				if(grade.charAt(0)=='C' && grade.charAt(1)=='-')
+				if(grade.charAt(0)=='C' && grade.charAt(1)=='+')
 					gradeCredit=2.3;
+				if(grade.charAt(0)=='C' && grade.charAt(1)=='-')
+					gradeCredit=1.5;
 				
 			}
 			else{
 				if(grade.charAt(0)=='A' )
-					gradeCredit=3.9;
+					gradeCredit=4.0;
 				if(grade.charAt(0)=='B' )
-					gradeCredit=3.2;
+					gradeCredit=3.0;
 				if(grade.charAt(0)=='C' )
-					gradeCredit=2.5;
+					gradeCredit=2.0;
 				if(grade.charAt(0)=='D' )
-					gradeCredit=2;
+					gradeCredit=1.0;
 				if(grade.charAt(0)=='I' )
 					gradeCredit=0;
 				

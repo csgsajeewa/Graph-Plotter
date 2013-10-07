@@ -3,6 +3,7 @@ package com.example.graphplot;
 
 /**
  * Description of GradeDatabase
+ * Represent the underlying grade database
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -10,8 +11,6 @@ package com.example.graphplot;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-
-import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -93,7 +92,7 @@ public class GradeDatabase extends ContentProvider{
     // check only if there is a "next" row available. If the
     // result Cursor is empty this will return false.
     while (cursor.moveToNext()) {
-    	result=new Result(cursor.getString(CODE_INDEX), cursor.getInt(CREDIT_INDEX), cursor.getString(GRADE_INDEX));
+    	result=new Result(cursor.getString(CODE_INDEX), cursor.getDouble(CREDIT_INDEX), cursor.getString(GRADE_INDEX));
     	results.add(result);
       
     }
@@ -137,7 +136,7 @@ public class GradeDatabase extends ContentProvider{
    */
   private static class MapDBOpenHelper extends SQLiteOpenHelper {
     
-    private static final String DATABASE_NAME = "GradeDatabase1.db";
+    private static final String DATABASE_NAME = "GradeDatabase3.db";
     private static final String DATABASE_TABLE = "GRADES";
     private static final int DATABASE_VERSION = 1;
     
@@ -149,7 +148,7 @@ public class GradeDatabase extends ContentProvider{
      SUGGEST_COLUMN_TEXT_1  + " text not null, " +
      SUGGEST_COLUMN_INTENT_DATA + " text not null, " +
      GRADE + " text not null, " +
-     CREDIT + " integer, " + 
+     CREDIT + " double, " + 
      SEMESTER + " integer);";
 
     public MapDBOpenHelper(Context context, String name,

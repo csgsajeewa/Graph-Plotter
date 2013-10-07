@@ -21,11 +21,13 @@ public class ResultEnterWindow extends Activity {
 	private Exam exam;
 	private int Ssemester;
 	private GradeDatabase gradeDatabase;
+	private GPADatabase gpaDatabase;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result_enter_window);
 		 results=new LinkedList<Result>();
 		 gradeDatabase=new GradeDatabase(this);
+		 gpaDatabase=new GPADatabase(this);
 		moduleCode=(EditText)findViewById(R.id.moduleCode);
 		grade=(EditText)findViewById(R.id.grade);
 		semester=(EditText)findViewById(R.id.semesterNumber);
@@ -46,7 +48,13 @@ public class ResultEnterWindow extends Activity {
 	  else{
 		  Ssemester=semester.getText().toString().charAt(0)-48;
 		String temp=credit.getText().toString();
-		int credit=temp.charAt(0)-48;
+		 double credit=0;
+		 if(temp.length()==1){
+			   credit=(temp.charAt(0)-48);
+			}
+		if(temp.length()==3){
+		   credit=(temp.charAt(0)-48)+((temp.charAt(2)-48)/10);
+		}
 		Result result=new Result(moduleCode.getText().toString(),credit, grade.getText().toString());
 		results.add(result);
 		moduleCode.setText("");
@@ -64,6 +72,11 @@ public class ResultEnterWindow extends Activity {
 	  if(moduleCode.getText().toString().isEmpty() &&  grade.getText().toString().isEmpty() && credit.getText().toString().isEmpty() ){
 		  exam=new Exam(Ssemester, results.size(), results);
 			gradeDatabase.addResults(exam);
+			gpaDatabase.addSGPA(1,3.37);
+			gpaDatabase.addSGPA(2,3.33);
+			gpaDatabase.addSGPA(3,3.62);
+			gpaDatabase.addSGPA(4,3.66);
+			gpaDatabase.addSGPA(exam.getSemester(), exam.calculateSGPA());
 		 
 		 }
 	  
@@ -81,6 +94,11 @@ public class ResultEnterWindow extends Activity {
 		Ssemester=semester.getText().toString().charAt(0)-48;
 		exam=new Exam(Ssemester, results.size(), results);
 		gradeDatabase.addResults(exam);
+		gpaDatabase.addSGPA(1,3.37);
+		gpaDatabase.addSGPA(2,3.33);
+		gpaDatabase.addSGPA(3,3.62);
+		gpaDatabase.addSGPA(4,3.66);
+		gpaDatabase.addSGPA(exam.getSemester(), exam.calculateSGPA());
 		int a=10;
 		 }
 	  finish();

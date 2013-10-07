@@ -109,6 +109,6 @@
         android:layout_alignLeft="@+id/grade"
         android:layout_alignTop="@+id/creditText"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
 </RelativeLayout>

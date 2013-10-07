@@ -58,7 +58,7 @@ public class GradesAdapter extends BaseAdapter{
 		
 		TextView credit=(TextView)view.findViewById(R.id.listCredit);
 		credit.setTextColor(0xff000000);
-		credit.setText(Integer.toString(result.getCredit()));
+		credit.setText(Double.toString(result.getCredit()));
 		
 		
 		

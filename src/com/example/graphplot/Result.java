@@ -2,11 +2,11 @@ package com.example.graphplot;
 
 public class Result {
 	
-	private int credit;
+	private double credit;
 	private String grade;
 	private String moduleCode;
 	
-	public Result(  String moduleCode , int credit,String grade) {
+	public Result(  String moduleCode , double credit,String grade) {
 		this.grade=grade;
 		this.moduleCode=moduleCode;
 		this.credit=credit;
@@ -16,7 +16,7 @@ public class Result {
 		return moduleCode;
 	}
 	
-	public int getCredit() {
+	public double getCredit() {
 		return credit;
 	}
 	

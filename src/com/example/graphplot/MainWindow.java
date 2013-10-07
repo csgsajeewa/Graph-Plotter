@@ -31,9 +31,15 @@ public class MainWindow extends Activity{
 		}
 		
 		
-		public void compareWithNumOfSubjects(View view){
+		public void showSGPA(View view){
 			
-			Intent intent = new Intent(this, GradeComparsionWindow.class);
+			Intent intent = new Intent(this, SGPAWindow.class);
+			startActivity(intent);
+			
+		}
+       public void compareWithNumOfSubjects(View view){
+			
+			Intent intent = new Intent(this, SGPAComparsionWindow.class);
 			startActivity(intent);
 			
 		}
