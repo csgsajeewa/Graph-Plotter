@@ -1,10 +1,15 @@
 package com.example.graphplot;
-
+/**
+ * Description of SGPAComparsionWindow
+ * 
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
 
 
 import java.util.Iterator;
 import java.util.LinkedList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +45,6 @@ public class ResultsWindow2 extends Activity{
 	private void getResults(int semester){
 		
 		exam=gradeDatabase.getResults(semester);
-		Exam exam1=exam;
 		handler.post(new Runnable() {
 			
 			@Override
@@ -59,57 +63,6 @@ public class ResultsWindow2 extends Activity{
 	  });
 	}
 	
-	private double calculateSGPA(){
-		LinkedList<Result>results=exam.getResults();
-		Iterator<Result>iter=results.listIterator();
-		String grade;
-		double totalCredit=0;
-		double obtainedValue=0;
-		double gradeCredit=0;
-		Result result;
-		while(iter.hasNext()){
-			result=iter.next();
-			grade=result.getGrade();
-			//I-CA etc
-			if(grade.length()==3){
-				gradeCredit=0;
-			}
-			if(grade.length()==2){
-				if(grade.charAt(0)=='A' && grade.charAt(1)=='+')
-					gradeCredit=4.2;
-				if(grade.charAt(0)=='A' && grade.charAt(1)=='-')
-					gradeCredit=3.7;
-				if(grade.charAt(0)=='B' && grade.charAt(1)=='+')
-					gradeCredit=3.3;
-				if(grade.charAt(0)=='B' && grade.charAt(1)=='-')
-					gradeCredit=2.7;
-				if(grade.charAt(0)=='C' && grade.charAt(1)=='+')
-					gradeCredit=2.3;
-				if(grade.charAt(0)=='C' && grade.charAt(1)=='-')
-					gradeCredit=1.5;
-				
-			}
-			else{
-				if(grade.charAt(0)=='A' )
-					gradeCredit=4.0;
-				if(grade.charAt(0)=='B' )
-					gradeCredit=3.0;
-				if(grade.charAt(0)=='C' )
-					gradeCredit=2.0;
-				if(grade.charAt(0)=='D' )
-					gradeCredit=1.0;
-				if(grade.charAt(0)=='I' )
-					gradeCredit=0;
-				
-				
-			}
-			obtainedValue=obtainedValue+ gradeCredit*result.getCredit();
-			totalCredit=totalCredit+result.getCredit();
-		}
-		
-		double GPA=obtainedValue/totalCredit;
-		return GPA;
-	}
 	
 	public void back(View view){
 	    finish();

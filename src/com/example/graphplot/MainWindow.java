@@ -1,4 +1,11 @@
 package com.example.graphplot;
+/**
+ * Description of MainWIndow
+ * 
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
 
 import android.app.Activity;
 import android.content.Intent;

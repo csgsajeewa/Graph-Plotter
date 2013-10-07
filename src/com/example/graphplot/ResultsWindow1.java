@@ -1,5 +1,11 @@
 package com.example.graphplot;
-
+/**
+ * Description of SGPAComparsionWindow
+ * 
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

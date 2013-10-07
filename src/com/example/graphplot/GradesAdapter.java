@@ -1,5 +1,11 @@
 package com.example.graphplot;
-
+/**
+ * Description of GradesAdapter
+ * This is used to input items in a collection to list view
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
 
 
 import java.util.LinkedList;
