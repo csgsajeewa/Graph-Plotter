@@ -12,7 +12,7 @@ package com.example.graphplot;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-import com.example.googlemaps.MapDatabase.MapDBOpenHelper;
+
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -24,9 +24,7 @@ import android.util.Log;
 
 public class GradeDatabase {
   
-  public static final String KEY_ID = "_id";
-  public static final String SUGGEST_COLUMN_TEXT_1="suggest_text_1";
-  public static final String SUGGEST_COLUMN_INTENT_DATA="suggest_intent_data";
+ 
   
   public static final String MODULE_CODE ="MODULE_CODE";
   public static final String GRADE ="GRADE";
@@ -50,12 +48,12 @@ public class GradeDatabase {
     mapDBOpenHelper.close();
   }
 
-  
+  //get results for a particular semester
   private Cursor getResultsCursor(int semester) {
     
     // Specify the result column projection.
     String[] result_columns = new String[] { 
-      KEY_ID, MODULE_CODE,GRADE,CREDIT,SEMESTER }; 
+      MODULE_CODE,GRADE,CREDIT,SEMESTER }; 
     
     // Specify the where clause 
     String where = SEMESTER + "=" + semester ;
@@ -107,8 +105,7 @@ public class GradeDatabase {
 		  // Assign values for each row.
          
 		  newValues.put(MODULE_CODE, result.getModuleCode());
-		  newValues.put(SUGGEST_COLUMN_TEXT_1 , result.getModuleCode());
-		  newValues.put(SUGGEST_COLUMN_INTENT_DATA ,result.getModuleCode());
+		  
 		  newValues.put(GRADE,result.getGrade());
 		  newValues.put(CREDIT,result.getCredit());
 		  newValues.put(SEMESTER, exam.getSemester());
@@ -120,7 +117,7 @@ public class GradeDatabase {
 	  }
   }
   
-  public void updateGradeInfo(int semester, String moduleCode, String grade) {
+  public int updateGradeInfo(int semester, String moduleCode, String grade) {
 	   
 	    // Create the updated row Content Values.
 	    ContentValues updatedValues = new ContentValues();
@@ -131,29 +128,26 @@ public class GradeDatabase {
 	    
 	    // Specify a where clause the defines which rows should be
 	    // updated. 
-	    String where = SEMESTER + "=" + semester + MODULE_CODE+"="+"'"+moduleCode+"'";
+	    String where = SEMESTER + "=" + semester + " AND " + MODULE_CODE+"="+"'"+moduleCode+"'";
 	    String whereArgs[] = null;
 	  
 	    // Update the row with the specified index with the new values.
 	    SQLiteDatabase db = mapDBOpenHelper.getWritableDatabase();
-	    db.update(MapDBOpenHelper.DATABASE_TABLE, updatedValues, 
-	              where, whereArgs);
+	    int number=db.update(MapDBOpenHelper.DATABASE_TABLE, updatedValues, where, whereArgs);
+	    return number;
 	  }
   
   
   private static class MapDBOpenHelper extends SQLiteOpenHelper {
     
-    private static final String DATABASE_NAME = "GradeDatabase3.db";
+    private static final String DATABASE_NAME = "GradeDatabase6.db";
     private static final String DATABASE_TABLE = "GRADES";
     private static final int DATABASE_VERSION = 1;
     
     // SQL Statement to create a new database.
     private static final String DATABASE_CREATE = "create table " +
-      DATABASE_TABLE + " (" + KEY_ID +
-      " integer primary key autoincrement, " +
-     MODULE_CODE + " text not null, " +
-     SUGGEST_COLUMN_TEXT_1  + " text not null, " +
-     SUGGEST_COLUMN_INTENT_DATA + " text not null, " +
+      DATABASE_TABLE + " ("  +
+     MODULE_CODE + " text primary key not null,  " +
      GRADE + " text not null, " +
      CREDIT + " double, " + 
      SEMESTER + " integer);";

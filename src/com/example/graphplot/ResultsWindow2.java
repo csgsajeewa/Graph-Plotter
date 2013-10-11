@@ -51,8 +51,12 @@ public class ResultsWindow2 extends Activity{
 			public void run() {
 				// give news items to list view via adapter
 				tSemester.setText(Integer.toString(exam.getSemester()));
-				
-				SGPA.setText(String.format("%.2f", exam.calculateSGPA()));
+				if(exam.getResults().isEmpty()){
+					SGPA.setText("Results have not been entered");
+				}
+				else{
+				   SGPA.setText(String.format("%.2f", exam.calculateSGPA()));
+				}
 				adapter.setList(exam.getResults());
 				ListView list=(ListView)findViewById(R.id.gradeList1);
 				list.setAdapter(adapter);

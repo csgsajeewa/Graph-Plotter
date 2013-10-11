@@ -47,7 +47,7 @@ public class SGPAWindow extends Activity{
         plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.1);// set configuration for y axis
         plot.setDomainLeftMax(0); //set left hand side end points of domain
         plot.setDomainRightMin(9);//set end points of domain
-        plot.setRangeTopMin(4.3);//set top value of y as maximum GPA value is 4.2
+        plot.setRangeTopMin(4.2);//set top value of y as maximum GPA value is 4.2
         ////////////////////////////////end of configuration//////////////////////////
         
         getSGPAS();// get SGPA values

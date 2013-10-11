@@ -2,7 +2,7 @@ package com.example.graphplot;
 
 /**
  * Description of Exam
- * represent exam 
+ * represent exam details
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk

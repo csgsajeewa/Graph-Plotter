@@ -28,6 +28,7 @@ public class ResultEnterWindow extends Activity {
 	private int Ssemester;
 	private GradeDatabase gradeDatabase;
 	private AlertDialog.Builder ad;
+	private String testMessage;//testing purposes
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.result_enter_window);
@@ -37,6 +38,7 @@ public class ResultEnterWindow extends Activity {
 		grade=(EditText)findViewById(R.id.grade);
 		semester=(EditText)findViewById(R.id.semesterNumber);
 		credit=(EditText)findViewById(R.id.credit);
+		testMessage="ok"; //testing purposes
 		/////////////////Dialog unregister-display when user needs to unregister///////////////////////////////////
         
 		Context context =this;
@@ -83,18 +85,20 @@ public void onCancel(DialogInterface dialog) {
 		  moduleCode.requestFocus(); 
 		  Toast toast = Toast.makeText(this,"Please Fill All The Fields", Toast.LENGTH_LONG);
 		  toast.show();
-				
+			testMessage="Please Fill All The Fields";	
 		 
 		 }
 	  else if(semester.getText().toString().length()>1 ){
 		  semester.requestFocus();
 		  Toast toast = Toast.makeText(this,"Semester should be a number between 1 -8", Toast.LENGTH_LONG);
 			toast.show();
+			testMessage="Semester should be a number between 1 -8";
 	  }
-	  else if(semester.getText().toString().equals("0") ){
+	  else if(semester.getText().toString().equals("0") || semester.getText().toString().equals("9")){
 		  semester.requestFocus();
 		  Toast toast = Toast.makeText(this,"Semester should be a number between 1 -8", Toast.LENGTH_LONG);
 			toast.show();
+			testMessage="Semester should be a number between 1 -8";
 	  }
 	  
 	 
@@ -102,21 +106,25 @@ public void onCancel(DialogInterface dialog) {
 		  moduleCode.requestFocus();
 		  Toast toast = Toast.makeText(this,"Module code is not in proper format", Toast.LENGTH_LONG);
 			toast.show();
+			testMessage="Module code is not in proper format";
 	  }
 	  else if(grade.getText().toString().length()>2){
 		  grade.requestFocus();
 		  Toast toast = Toast.makeText(this,"Grade is invalid", Toast.LENGTH_LONG);
 		  toast.show();
+		  testMessage="Grade is invalid";
 	  }
 	  else if(!(grade.getText().toString().matches(regex2) || grade.getText().toString().matches(regex3))){
 		  grade.requestFocus();
 		  Toast toast = Toast.makeText(this,"Grade is invalid", Toast.LENGTH_LONG);
 		  toast.show();
+		  testMessage="Grade is invalid";
 	  }
 	  else if(credit.getText().toString().length()>3){
 		  credit.requestFocus();
 		  Toast toast = Toast.makeText(this,"Credit value is invalid", Toast.LENGTH_LONG);
 		  toast.show();
+		  testMessage="Credit value is invalid";
 	  }
 	  else{
 		  Ssemester=semester.getText().toString().charAt(0)-48;
@@ -164,7 +172,7 @@ public void onCancel(DialogInterface dialog) {
 			toast.show();
 	  }
 	  
-	  else if(semester.getText().toString().equals("0") ){
+	  else if(semester.getText().toString().equals("0") || semester.getText().toString().equals("9")){
 		  semester.requestFocus();
 		  Toast toast = Toast.makeText(this,"Semester should be a number between 1 -8", Toast.LENGTH_LONG);
 			toast.show();
@@ -202,6 +210,20 @@ public void onCancel(DialogInterface dialog) {
 		 }
 	 
 		
+	}
+	
+	//testing purposes
+	public String getTestMessage() {
+		return testMessage;
+	}
+	
+	//testing purposes
+	public LinkedList<Result> getResults() {
+		return results;
+	}
+	//testing purposes
+	public Exam getExam() {
+		return exam;
 	}
 
 }
