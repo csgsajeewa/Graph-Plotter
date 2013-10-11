@@ -37,6 +37,13 @@ public class MainWindow extends Activity{
 			
 		}
 		
+       public void editResults(View view){
+			
+			Intent intent = new Intent(this, ResultEnterWindow.class);
+			startActivity(intent);
+			
+		}
+		
 		
 		public void showSGPA(View view){
 			

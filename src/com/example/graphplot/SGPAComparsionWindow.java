@@ -47,7 +47,7 @@ public class SGPAComparsionWindow extends Activity{
         plot.setDomainStep(XYStepMode.INCREMENT_BY_VAL, 1);// set configuration for x axis
         plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.1);// set configuration for y axis
         plot.setDomainLeftMax(0); //set end points of domain
-        plot.setDomainRightMin(7);//set end points of domain
+        plot.setDomainRightMin(9);//set end points of domain
         plot.setRangeTopMin(9);//set top value of y as maximum GPA value is 4.2
         /////////////////////////////end of configuration////////////////////////////////////////////
         
@@ -61,7 +61,7 @@ public class SGPAComparsionWindow extends Activity{
         	seriesNumbers.add(i+1);
         }
         // Turn the above two arrays into XYSeries':
-        XYSeries series1 = new SimpleXYSeries(seriesNumbers,numOfSubjects,"Number of Subjects");// Set the display title of the series
+        XYSeries series1 = new SimpleXYSeries(seriesNumbers,numOfSubjects,"Num Subjects");// Set the display title of the series
  
         // Create a formatter to use for drawing a series using LineAndPointRenderer
         // and configure it from xml:

@@ -11,6 +11,9 @@ package com.example.graphplot;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+
+import com.example.googlemaps.MapDatabase.MapDBOpenHelper;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -117,8 +120,25 @@ public class GradeDatabase {
 	  }
   }
   
- // add edit method here
-  
+  public void updateGradeInfo(int semester, String moduleCode, String grade) {
+	   
+	    // Create the updated row Content Values.
+	    ContentValues updatedValues = new ContentValues();
+	  
+	    // Assign values for each row.
+	    updatedValues.put(GRADE, grade);
+	   
+	    
+	    // Specify a where clause the defines which rows should be
+	    // updated. 
+	    String where = SEMESTER + "=" + semester + MODULE_CODE+"="+"'"+moduleCode+"'";
+	    String whereArgs[] = null;
+	  
+	    // Update the row with the specified index with the new values.
+	    SQLiteDatabase db = mapDBOpenHelper.getWritableDatabase();
+	    db.update(MapDBOpenHelper.DATABASE_TABLE, updatedValues, 
+	              where, whereArgs);
+	  }
   
   
   private static class MapDBOpenHelper extends SQLiteOpenHelper {

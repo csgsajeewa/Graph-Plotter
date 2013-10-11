@@ -9,22 +9,12 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:text="Check Results" 
-        android:onClick="checkResults"/>
-
-    <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button3"
         android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/button3"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="43dp"
         android:onClick="enterResults"
         android:text="Enter Results" />
@@ -35,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
         android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="38dp"
         android:onClick="compareWithNumOfSubjects"
         android:text="@string/CompareWithSubjects" />
@@ -46,9 +36,31 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button2"
         android:layout_alignLeft="@+id/button2"
-        android:layout_alignRight="@+id/button2"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="32dp"
-        android:text="SGPAGraph" 
-        android:onClick="showSGPA"/>
+        android:onClick="showSGPA"
+        android:text="SGPAGraph" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/button1"
+        android:layout_marginBottom="119dp"
+        android:onClick="checkResults"
+        android:text="Check Results" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="48dp"
+         android:onClick="editResults"
+        android:text="Edit Result" />
   
 </RelativeLayout>
