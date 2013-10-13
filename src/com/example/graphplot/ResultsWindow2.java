@@ -1,15 +1,14 @@
 package com.example.graphplot;
 /**
- * Description of SGPAComparsionWindow
- * 
+ * Description of ResultWindow2
+ * This interface will display the result of the particular semester
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
  */
 
 
-import java.util.Iterator;
-import java.util.LinkedList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,12 +35,12 @@ public class ResultsWindow2 extends Activity{
 		tSemester=(TextView)findViewById(R.id.listSemester);
 		SGPA=(TextView)findViewById(R.id.listSGPA);
 		Intent intent = getIntent();
-		semester=intent.getIntExtra("semester",0);
+		semester=intent.getIntExtra("semester",0);// access semester value set by ResultWindow1
 		 getResults(semester);
 		
 	}
 	
-	
+	// get results of particular semester and display it in a list view
 	private void getResults(int semester){
 		
 		exam=gradeDatabase.getResults(semester);

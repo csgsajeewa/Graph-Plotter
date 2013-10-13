@@ -1,7 +1,8 @@
 package com.example.graphplot;
 /**
- * Description of SGPAComparsionWindow
- * 
+ * Description of ResultEnterWindow1
+ * This interface provide functionality for the user to enter semester number that 
+ * he needs to check results
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -25,6 +26,7 @@ public class ResultsWindow1 extends Activity{
 		
 	}
 	
+    // calls to check results of a particular semester	
 	public void check(View view){
 		
 		if(semester.getText().toString().length()>1 || semester.getText().toString().equals("0") || semester.getText().toString().equals("9")){

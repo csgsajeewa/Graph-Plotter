@@ -1,7 +1,7 @@
 package com.example.graphplot;
 /**
- * Description of MainWIndow
- * 
+ * Description of MainWindow
+ * Main Interface Of The App
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk

@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="16dp"
-        android:text="Finish" 
+        android:text="@string/finish" 
         android:onClick="finish"/>
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="15dp"
-        android:text="Enter" 
+        android:text="@string/enter" 
         android:onClick="enter"/>
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_above="@+id/moduleCode"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="65dp"
-        android:text="Semester:"
+        android:text="@string/semester"
         
         android:textAppearance="?android:attr/textAppearanceLarge" />
      <TextView
@@ -43,7 +43,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="158dp"
-        android:text="Enter Module Code:"
+        android:text="@string/enterModuleCode"
        
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -54,7 +54,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/moduleCode"
         android:layout_marginTop="75dp"
-        android:text="Enter Grade:"
+        android:text="@string/enterGrade"
      
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
@@ -66,7 +66,7 @@
         android:layout_toRightOf="@+id/gradeText"
         android:ems="10"
         android:inputType="number" 
-        android:hint="Ex- Number 1-8" >
+        android:hint="@string/semsterHint" >
          <requestFocus />
     </EditText>
     
@@ -80,7 +80,7 @@
         android:layout_toRightOf="@+id/moduleCodeText"
         android:ems="10" 
         android:inputType="text"
-        android:hint="Ex- CS1234 or cs1234">
+        android:hint="@string/moduleHint">
 
         
     </EditText>
@@ -95,7 +95,7 @@
         android:layout_toRightOf="@+id/gradeText"
         android:ems="10" 
         android:inputType="text"
-        android:hint="Ex- A+ or A or a or a+"/>
+        android:hint="@string/gradeHint"/>
 
     <TextView
         android:id="@+id/creditText"
@@ -104,7 +104,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/gradeText"
         android:layout_marginTop="59dp"
-        android:text="Credits:"
+        android:text="@string/credit"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText

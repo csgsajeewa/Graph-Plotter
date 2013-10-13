@@ -1,4 +1,12 @@
 package com.example.graphplot;
+/**
+ * Description of Result
+ * Represent individual result details
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
+
 
 public class Result {
 	

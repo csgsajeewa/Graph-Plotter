@@ -9,7 +9,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="63dp"
-        android:text="Semester: "
+        android:text="@string/semester"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editSemesterValue"
         android:layout_marginTop="76dp"
-        android:text="Grade: "
+        android:text="@string/grade"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_above="@+id/editGradeValue"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="14dp"
-        android:text="Module Code:"
+        android:text="@string/module"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editSemesterText"
         android:layout_alignBottom="@+id/editSemesterText"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/editModuleCodeValue"
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="text" >
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editGradeText"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/editModuleCodeValue"
         android:layout_alignParentRight="true"
         android:ems="10"
         android:inputType="text" >
@@ -75,7 +75,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editGradeText"
         android:layout_marginTop="44dp"
-        android:text="Submit" 
+        android:text="@string/submit" 
         android:onClick="submit"/>
 
     <Button
@@ -87,6 +87,6 @@
         android:layout_below="@+id/editButton"
         android:layout_marginTop="20dp"
         android:onClick="back"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </RelativeLayout>

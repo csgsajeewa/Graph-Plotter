@@ -1,7 +1,7 @@
 package com.example.graphplot;
 /**
  * Description of SGPAWindow
- * 
+ * This provides a graph of SGPAs
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -60,15 +60,15 @@ public class SGPAWindow extends Activity{
         	series1Numbers.add(i+1);
         }
         
-       XYSeries series2 = new SimpleXYSeries( series1Numbers,SGPAS, "Your GPA");// Set the display title of the series
+       XYSeries series = new SimpleXYSeries( series1Numbers,SGPAS, "Your GPA");// Set the display title of the series
  
        // Create a formatter to use for drawing a series using LineAndPointRenderer and configure it from xml:
-        LineAndPointFormatter series2Format = new LineAndPointFormatter();
-        series2Format.setPointLabelFormatter(new PointLabelFormatter());
-        series2Format.configure(getApplicationContext(),R.layout.line_point_formatter_with_plf2);
+        LineAndPointFormatter seriesFormat = new LineAndPointFormatter();
+        seriesFormat.setPointLabelFormatter(new PointLabelFormatter());
+        seriesFormat.configure(getApplicationContext(),R.layout.line_point_formatter_with_plf2);
  
         // add a new series' to the xy plot:
-        plot.addSeries(series2, series2Format);
+        plot.addSeries(series, seriesFormat);
  
        //////////////////////////end of series///////////////////////////////////////////////////////
  

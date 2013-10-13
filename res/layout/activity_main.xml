@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="43dp"
         android:onClick="enterResults"
-        android:text="Enter Results" />
+        android:text="@string/EnterResults" />
 
     <Button
         android:id="@+id/button2"
@@ -39,7 +39,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="32dp"
         android:onClick="showSGPA"
-        android:text="SGPAGraph" />
+        android:text="@string/sgpaGraph" />
 
     <Button
         android:id="@+id/button3"
@@ -50,7 +50,7 @@
         android:layout_alignRight="@+id/button1"
         android:layout_marginBottom="119dp"
         android:onClick="checkResults"
-        android:text="Check Results" />
+        android:text="@string/checkResults" />
 
     <Button
         android:id="@+id/button5"
@@ -60,7 +60,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="48dp"
-         android:onClick="editResults"
-        android:text="Edit Result" />
+        android:onClick="editResults"
+        android:text="@string/editResults" />
   
 </RelativeLayout>

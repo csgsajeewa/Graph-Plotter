@@ -1,6 +1,7 @@
 package com.example.graphplot;
 /**
- * Description of SGPAComparsionWindow
+ * Description of ResultEnterWindow
+ * this interface provides functionality of entering results of a specific exam
  * 
  *
  * @author chamath sajeewa
@@ -8,9 +9,6 @@ package com.example.graphplot;
  */
 import java.util.LinkedList;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -27,7 +25,7 @@ public class ResultEnterWindow extends Activity {
 	private Exam exam;
 	private int Ssemester;
 	private GradeDatabase gradeDatabase;
-	private AlertDialog.Builder ad;
+	
 	private String testMessage;//testing purposes
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,44 +37,10 @@ public class ResultEnterWindow extends Activity {
 		semester=(EditText)findViewById(R.id.semesterNumber);
 		credit=(EditText)findViewById(R.id.credit);
 		testMessage="ok"; //testing purposes
-		/////////////////Dialog unregister-display when user needs to unregister///////////////////////////////////
-        
-		Context context =this;
-		String title = "UOM-Student Info System";
 		
-		String button1String = "Unregister";
-		String button2String = "Go Back";
-
-ad = new AlertDialog.Builder(context);
-ad.setTitle(title);
-
-
-ad.setPositiveButton(button1String,new DialogInterface.OnClickListener() {
-public void onClick(DialogInterface dialog, int arg1) {
-//unregister();
-}
-}
-);
-
-
-
-ad.setNegativeButton(button2String,new DialogInterface.OnClickListener(){
-  public void onClick(DialogInterface dialog, int arg1) {
-             // do nothing user has decided not to unregister
-   }
-}
-);
-
-ad.setCancelable(true);
-ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
-public void onCancel(DialogInterface dialog) {
-         
-}
-}
-);
-//////////////////////////////////////////////////////////////
 	}
 	
+	// calls when user needs to enter results of a subject
 	public void enter(View view){
 		String regex1="[a-zA-Z]{2}[0-9]{4}";
 		String regex2="[abcdiABCDI]";
@@ -147,6 +111,7 @@ public void onCancel(DialogInterface dialog) {
 		}
 	}
 	
+	// calls when user finishes entering results
 	public void finish(View view){
 		
 		String regex1="[a-zA-Z]{2}[0-9]{4}";

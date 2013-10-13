@@ -1,7 +1,7 @@
 package com.example.graphplot;
 /**
  * Description of SGPAComparsionWindow
- * 
+ * Provides a graph which compares number of subjects with SGPA
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -48,7 +48,7 @@ public class SGPAComparsionWindow extends Activity{
         plot.setRangeStep(XYStepMode.INCREMENT_BY_VAL, 0.1);// set configuration for y axis
         plot.setDomainLeftMax(0); //set end points of domain
         plot.setDomainRightMin(9);//set end points of domain
-        plot.setRangeTopMin(9);//set top value of y as maximum GPA value is 4.2
+        plot.setRangeTopMin(9);
         /////////////////////////////end of configuration////////////////////////////////////////////
         
         getSGPAS(); // obtain SGPA values
@@ -60,7 +60,7 @@ public class SGPAComparsionWindow extends Activity{
         for(int i=0; i< numOfSubjects.size(); i++){
         	seriesNumbers.add(i+1);
         }
-        // Turn the above two arrays into XYSeries':
+       
         XYSeries series1 = new SimpleXYSeries(seriesNumbers,numOfSubjects,"Num Subjects");// Set the display title of the series
  
         // Create a formatter to use for drawing a series using LineAndPointRenderer
@@ -75,10 +75,10 @@ public class SGPAComparsionWindow extends Activity{
         
        ////////////////////////second series//////////////////////////////////////////////
        //give values to plot - My GPA
-       // Number[] series3Numbers = (Number[])SGPAS.toArray();
+       
        
  
-        // Turn the above two arrays into XYSeries':
+       
         XYSeries series2 = new SimpleXYSeries(seriesNumbers,SGPAS,"Your GPA");// Set the display title of the series
  
        // Create a formatter to use for drawing a series using LineAndPointRenderer

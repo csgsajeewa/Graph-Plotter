@@ -1,7 +1,7 @@
 package com.example.graphplot;
 /**
  * Description of GradesAdapter
- * This is used to input items in a collection to list view
+ * This is used to input items in a collection(list) to list view(lay out)
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk

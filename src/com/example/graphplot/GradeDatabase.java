@@ -3,7 +3,8 @@ package com.example.graphplot;
 
 /**
  * Description of GradeDatabase
- * Represent the underlying grade database
+ * Represent the underlying grade database, it contains module code, grade,credit and
+ * semester of each subject
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -35,20 +36,20 @@ public class GradeDatabase {
 
 
  
-  private MapDBOpenHelper mapDBOpenHelper;
+  private GradeDBOpenHelper gradeDBOpenHelper;
    
 
   public GradeDatabase(Context context) {
-    mapDBOpenHelper = new MapDBOpenHelper(context, MapDBOpenHelper.DATABASE_NAME, null, 
-                                              MapDBOpenHelper.DATABASE_VERSION);
+    gradeDBOpenHelper = new GradeDBOpenHelper(context, GradeDBOpenHelper.DATABASE_NAME, null, 
+                                              GradeDBOpenHelper.DATABASE_VERSION);
   }
   
   // Called when no longer need access to the database.
   public void closeDatabase() {
-    mapDBOpenHelper.close();
+    gradeDBOpenHelper.close();
   }
 
-  //get results for a particular semester
+  //get results(cursor) for a particular semester
   private Cursor getResultsCursor(int semester) {
     
     // Specify the result column projection.
@@ -62,12 +63,13 @@ public class GradeDatabase {
     String having = null;
     String order = null;
     
-    SQLiteDatabase db = mapDBOpenHelper.getWritableDatabase();
-    Cursor cursor = db.query(MapDBOpenHelper.DATABASE_TABLE,  result_columns, where,whereArgs, groupBy, having, order);
+    SQLiteDatabase db = gradeDBOpenHelper.getWritableDatabase();
+    Cursor cursor = db.query(GradeDBOpenHelper.DATABASE_TABLE,  result_columns, where,whereArgs, groupBy, having, order);
     
     return cursor;
   }
   
+  // get results for a particular semester
   public Exam getResults(int semester) {
     Cursor cursor = getResultsCursor(semester);// get cursor
     Result result;
@@ -92,6 +94,7 @@ public class GradeDatabase {
     return exam;
   }
   
+  // add results of a particular exam to database
   public void addResults(Exam exam) {
    
     // Create a new row of values to insert.
@@ -112,11 +115,12 @@ public class GradeDatabase {
     
   
 		  // Insert the row into your table
-		  SQLiteDatabase db = mapDBOpenHelper.getWritableDatabase();
-		  db.insert(MapDBOpenHelper.DATABASE_TABLE, null, newValues); 
+		  SQLiteDatabase db = gradeDBOpenHelper.getWritableDatabase();
+		  db.insert(GradeDBOpenHelper.DATABASE_TABLE, null, newValues); 
 	  }
   }
   
+  // update information about particular subject 
   public int updateGradeInfo(int semester, String moduleCode, String grade) {
 	   
 	    // Create the updated row Content Values.
@@ -132,13 +136,13 @@ public class GradeDatabase {
 	    String whereArgs[] = null;
 	  
 	    // Update the row with the specified index with the new values.
-	    SQLiteDatabase db = mapDBOpenHelper.getWritableDatabase();
-	    int number=db.update(MapDBOpenHelper.DATABASE_TABLE, updatedValues, where, whereArgs);
+	    SQLiteDatabase db = gradeDBOpenHelper.getWritableDatabase();
+	    int number=db.update(GradeDBOpenHelper.DATABASE_TABLE, updatedValues, where, whereArgs);
 	    return number;
 	  }
   
   
-  private static class MapDBOpenHelper extends SQLiteOpenHelper {
+  private static class GradeDBOpenHelper extends SQLiteOpenHelper {
     
     private static final String DATABASE_NAME = "GradeDatabase6.db";
     private static final String DATABASE_TABLE = "GRADES";
@@ -152,7 +156,7 @@ public class GradeDatabase {
      CREDIT + " double, " + 
      SEMESTER + " integer);";
 
-    public MapDBOpenHelper(Context context, String name,
+    public GradeDBOpenHelper(Context context, String name,
                       CursorFactory factory, int version) {
       super(context, name, factory, version);
     }

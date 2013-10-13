@@ -9,7 +9,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp"
-        android:text="Module: "
+        android:text="@string/module"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_alignBottom="@+id/textView1"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/textView1"
-        android:text="Medium Text"
+       
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="15dp"
-        android:text="Grade: "
+        android:text="@string/grade"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -39,7 +39,7 @@
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/listModuleCode"
-        android:text="Medium Text"
+        
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -49,7 +49,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="18dp"
-        android:text="Credit: "
+        android:text="@string/credit"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -59,7 +59,7 @@
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignLeft="@+id/listGrade"
-        android:text="Medium Text"
+        
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

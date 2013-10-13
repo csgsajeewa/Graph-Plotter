@@ -2,7 +2,7 @@ package com.example.graphplot;
 
 /**
  * Description of Exam
- * represent exam details
+ * represent exam details- semester, numOfSubjects, results
  *
  * @author chamath sajeewa
  * chamaths.10@cse.mrt.ac.lk
@@ -36,7 +36,7 @@ public class Exam {
 	public LinkedList<Result> getResults() {
 		return results;
 	}
-	
+	// calculate semester GPA
 	public double calculateSGPA(){
 		
 		Iterator<Result>iter=results.listIterator();

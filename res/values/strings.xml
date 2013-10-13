@@ -6,6 +6,25 @@
     <string name="hello_world">Hello world!</string>
     <string name="EnterResults">Enter Results</string>
     <string name="CompareWithSubjects">Compare With Number Of Subjects</string>
+	<string name="module">Module Code: </string>
+	<string name="grade">Grade: </string>
+	<string name="credit">Credit: </string>
+	<string name="semester">Semester: </string>
+	<string name="finish">Finish </string>
+	<string name="enter">Enter </string>
+	<string name="enterModuleCode">Enter Module Code: </string>
+	<string name="enterGrade">Enter Grade: </string>
+	<string name="semsterHint">Ex- Number 18</string>
+	<string name="moduleHint">Ex- CS1234 or cs1234</string>
+	<string name="gradeHint">Ex- A+ or A or a or a+</string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
+    <string name="sgpaGraph">SGPAGraph</string>
+    <string name="checkResults">Check Results</string>
+    <string name="editResults">Edit Results</string>
+     
+     
+	
    
         
 

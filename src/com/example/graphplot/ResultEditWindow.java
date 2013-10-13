@@ -1,4 +1,12 @@
 package com.example.graphplot;
+/**
+ * Description of ResultEditWindow
+ * This interface provides functionality of editing details of a subject
+ *
+ * @author chamath sajeewa
+ * chamaths.10@cse.mrt.ac.lk
+ */
+
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,7 +36,7 @@ public class ResultEditWindow  extends Activity{
 		grade=(EditText)findViewById(R.id.editGradeValue);
 		
 		
-/////////////////Dialog -display subject is not existing///////////////////////////////////
+		/////////////////Dialog -display subject is not existing///////////////////////////////////
         
 		Context context =this;
 		String title = "CalcGPA";
@@ -43,7 +51,7 @@ public class ResultEditWindow  extends Activity{
 
         ad.setPositiveButton(button1String,new DialogInterface.OnClickListener() {
         	public void onClick(DialogInterface dialog, int arg1) {
-        		//change Module
+        		//do nothing, stay in the same window to change Module
         	}
           }
         );
@@ -54,8 +62,8 @@ public class ResultEditWindow  extends Activity{
         	public void onClick(DialogInterface dialog, int arg1) {
                 finish();
         	}
-        }
-    );
+          }
+        );
 
         	ad.setCancelable(true);
         ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -64,13 +72,13 @@ public class ResultEditWindow  extends Activity{
         	}
         }
        );
-//////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////
 		
 	}
 	
 		
 	
-	
+	// this function is called when user clicks submit button
 	public void submit(View view){
 	
 		
@@ -88,13 +96,13 @@ public class ResultEditWindow  extends Activity{
 		 }
 	  else if(semester.getText().toString().length()>1 ){
 		  semester.requestFocus();
-		  Toast toast = Toast.makeText(this,"Semester should be a number between 1 -8", Toast.LENGTH_LONG);
+		  Toast toast = Toast.makeText(this,"Semester Should Be A Number Between 1 -8", Toast.LENGTH_LONG);
 			toast.show();
 			testMessage="Semester should be a number between 1 -8";
 	  }
 	  else if(semester.getText().toString().equals("0") || semester.getText().toString().equals("9")){
 		  semester.requestFocus();
-		  Toast toast = Toast.makeText(this,"Semester should be a number between 1 -8", Toast.LENGTH_LONG);
+		  Toast toast = Toast.makeText(this,"Semester Should Be A Number Between 1 -8", Toast.LENGTH_LONG);
 			toast.show();
 			testMessage="Semester should be a number between 1 -8";
 	  }
@@ -102,19 +110,19 @@ public class ResultEditWindow  extends Activity{
 	 
 	  else if(!moduleCode.getText().toString().matches(regex1)){
 		  moduleCode.requestFocus();
-		  Toast toast = Toast.makeText(this,"Module code is not in proper format", Toast.LENGTH_LONG);
+		  Toast toast = Toast.makeText(this,"Module Code Is Not In Proper Format", Toast.LENGTH_LONG);
 			toast.show();
 			testMessage="Module code is not in proper format";
 	  }
 	  else if(grade.getText().toString().length()>2){
 		  grade.requestFocus();
-		  Toast toast = Toast.makeText(this,"Grade is invalid", Toast.LENGTH_LONG);
+		  Toast toast = Toast.makeText(this,"Grade Is Invalid", Toast.LENGTH_LONG);
 		  toast.show();
 		  testMessage="Grade is invalid";
 	  }
 	  else if(!(grade.getText().toString().matches(regex2) || grade.getText().toString().matches(regex3))){
 		  grade.requestFocus();
-		  Toast toast = Toast.makeText(this,"Grade is invalid", Toast.LENGTH_LONG);
+		  Toast toast = Toast.makeText(this,"Grade Is Invalid", Toast.LENGTH_LONG);
 		  toast.show();
 		  testMessage="Grade is invalid";
 	  }
@@ -123,7 +131,7 @@ public class ResultEditWindow  extends Activity{
 		  Ssemester=semester.getText().toString().charAt(0)-48;
 		  int number=gradeDatabase.updateGradeInfo(Ssemester, moduleCode.getText().toString().toUpperCase(), grade.getText().toString().toUpperCase());
 		  if(number>0){
-		     Toast toast = Toast.makeText(this,"Grade has been successfully edited", Toast.LENGTH_LONG);
+		     Toast toast = Toast.makeText(this,"Grade Has Been Successfully Edited", Toast.LENGTH_LONG);
 		     toast.show();
 		     testMessage="Grade has been successfully edited";
 		     finish();
