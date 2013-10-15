@@ -1,6 +1,6 @@
 package com.example.graphplot;
 /**
- * Description of ResultEnterWindow1
+ * Description of ResultWindow1
  * This interface provide functionality for the user to enter semester number that 
  * he needs to check results
  *
